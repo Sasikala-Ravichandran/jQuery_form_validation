@@ -1,12 +1,12 @@
 $(function(){
 	$('form').validate({
 		invalidHandler: function( event, validator ) {
-      		var errors = validator.numberOfInvalids();
-      		if( errors ) {
-        		var message = ( errors === 1 ) ? 'highlighted field' : errors + ' highlighted fields';
-            	$( '.submit-error' ).show().find( 'span' ).html( message );
-      		}
-   		 },
+			var errors = validator.numberOfInvalids();
+			if( errors ) {
+				var message = ( errors === 1 ) ? 'highlighted field' : errors + ' highlighted fields';
+				$( '.submit-error' ).show().find( 'span' ).html( message );
+			}
+		},
 		rules:{
 			email:{
 				required: true,
@@ -30,15 +30,13 @@ $(function(){
 				required: true,
 				equalTo: '#password',
 				rangelength: [6, 32]
-
 			},
 			terms_check : {
 				required: true
-
 			}
 		},
 		messages: {
-          email:{
+			email:{
 				required: "Please enter the email id",
 				email: "Please enter the valid email"
 			},
@@ -60,11 +58,9 @@ $(function(){
 				required: "Please enter password again",
 				equalTo: "Please enter password as same as password",
 				rangelength:  "Please enter min 6 digits for a password"
-
 			},
 			terms_check : {
 				required: "Please Agree the terms and conditions."
-				
 			}
 		}
 	});
